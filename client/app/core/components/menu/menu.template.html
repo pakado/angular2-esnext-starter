@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container topnavbar">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" (click)="navCollapsed=!navCollapsed">
          <span class="sr-only">Toggle navigation</span>
@@ -16,5 +16,19 @@
             <li><a [routerLink]="['/Login']" *ngIf="!(getLoggedIn() | async)" (click)="navCollapsed=!navCollapsed">Login</a></li>
             <li><a href="#" (click)="logout()" *ngIf="getLoggedIn() | async" (click)="navCollapsed=!navCollapsed">Logout</a></li>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a (click)="searchOpened=true"  class="dropdown-toggle">               
+                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>  
+                </a>
+            </li>
+            <form role="search" action="search.html" class="navbar-form" [class.open]="searchOpened">
+                <div class="form-group has-feedback">
+                    <input type="text" placeholder="Type and hit enter.." class="form-control">
+                    <div search-dismiss="search-dismiss" class="fa fa-times form-control-feedback"></div>
+                </div>
+                <button type="submit" class="hidden btn btn-default">Submit</button>
+            </form>            
+        </ul>        
     </div>
 </div>
