@@ -47,6 +47,10 @@ router.post('/post/:id', jwtMiddleware, function*() {
   this.body = res;
 });
 
+router.get('/search/:term', function*() {
+  var res = yield articles.find({ $text: { $search: this.params.term } } );
+  this.body = res;
+});
 
 router.post('/post', jwtMiddleware, function*() {
   let newDoc = {

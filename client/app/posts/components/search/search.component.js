@@ -22,7 +22,7 @@ export class SearchComponent {
   }
 
   ngOnInit() {//searchPosts
-    this._postService.refreshPosts(this._params.get('term'));
+    this._postService.searchPosts(this._params.get('term'));
   }
 
   getRemotePosts() {
