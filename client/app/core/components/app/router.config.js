@@ -3,8 +3,10 @@ import { CategoriesListComponent } from '../../../categories/components/categori
 import { PostNewComponent } from '../../../posts/components/post-new/post-new.component';
 import { PostEditComponent } from '../../../posts/components/post-edit/post-edit.component';
 import { ArticleComponent } from '../../../posts/components/article/article.component';
+import { SearchComponent } from '../../../posts/components/search/search.component';
 import { AboutComponent } from '../about/about.component';
 import { LoginComponent } from '../../../auth/components/login/login.component';
+
 
 export const routes = [
   { path: '/', component: PostListComponent, name: 'List', useAsDefault: true },
@@ -15,4 +17,5 @@ export const routes = [
   { path: '/about', component: AboutComponent, name: 'About' },
   { path: '/login', component: LoginComponent, name: 'Login' },
   { path: '/article/:id', component: ArticleComponent, name: 'Article' },
+  { path: '/search/:term', component: SearchComponent, name: 'Search' },
 ];
