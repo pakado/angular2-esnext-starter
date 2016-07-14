@@ -30,6 +30,23 @@ export class PostService {
     return postsResponse;
   }
 
+  searchPosts(term) {
+    let url =  '/search/' + term;
+    let postsResponse = this._http.get(url)
+      .map(res => res.json());
+
+    postsResponse.subscribe(
+        (posts) => {
+          this.remotePosts.next(posts);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+
+    return postsResponse;
+  }
+
   addPost(post) {
     return this._http
       .post('/post', JSON.stringify(post), { headers: this._request.getAuthHeaders() })
@@ -51,4 +68,6 @@ export class PostService {
       .post(`/post/${post._id}`, JSON.stringify(post), { headers: this._request.getAuthHeaders() })
       .map(res => res.json());
   }
+
+
 }

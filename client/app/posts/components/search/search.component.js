@@ -21,16 +21,11 @@ export class SearchComponent {
     this._params = params; 
   }
 
-  ngOnInit() {
+  ngOnInit() {//searchPosts
     this._postService.refreshPosts(this._params.get('term'));
   }
 
   getRemotePosts() {
-    console.log('gettting...')
     return this._postService.remotePosts;
-  }
-
-  getLoggedIn() {
-    return this._userService.getLoggedIn();
   }
 }
