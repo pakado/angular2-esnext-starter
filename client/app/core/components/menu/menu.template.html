@@ -24,10 +24,9 @@
             </li>
             <form role="search" action="search.html" class="navbar-form" [class.open]="searchOpened">
                 <div class="form-group has-feedback">
-                    <input type="text" placeholder="Type and hit enter.." class="form-control" (keyup)="search($event)" >
+                    <input type="text" placeholder="Type Something..." class="form-control" (keyup)="search($event)" >
                     <div search-dismiss="search-dismiss" class="glyphicon glyphicon-remove form-control-feedback" (click)="searchOpened=false"></div>
                 </div>
-                <button type="submit" class="hidden btn btn-default">Submit</button>
             </form>            
         </ul>        
     </div>
