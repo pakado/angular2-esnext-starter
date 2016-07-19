@@ -36,7 +36,8 @@
     "koa-static": "2.0.0",
     "mongodb": "^2.1.18",
     "monk": "https://github.com/vccabral/monk.git",
-    "node-uuid": "1.4.7"
+    "node-uuid": "1.4.7",
+    "whirl": "git+https://github.com/jh3y/whirl.git"
   },
   "devDependencies": {
     "@angular/common": "2.0.0-rc.2",

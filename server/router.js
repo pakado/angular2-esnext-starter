@@ -48,8 +48,18 @@ router.post('/post/:id', jwtMiddleware, function*() {
 });
 
 router.get('/search/:term', function*() {
-  var res = yield articles.find({ $text: { $search: this.params.term } } );
-  this.body = res;
+  var res = yield  articles.find({ $text: { $search: this.params.term } } );
+  yield new Promise((resolve, reject) => {
+    setTimeout(() => {
+      this.body = res;
+      resolve();
+    }, 2000);
+  });
+  
+  /*
+    var res = yield articles.find({ $text: { $search: this.params.term } } );
+    this.body = res;
+ */
 });
 
 router.post('/post', jwtMiddleware, function*() {
