@@ -3,7 +3,7 @@
         <div class="list-group row text-center"  *ngIf="_results && _results.length===0">
             <div class="well">No items found...</div>
         </div>
-        <div class="list-group row text-center"  *ngIf="_results==undefined">
+        <div class="list-group row text-center"  *ngIf="_results?==undefined">
             <div class="whirl traditional"></div>
         </div>        
         <div class="list-group row">

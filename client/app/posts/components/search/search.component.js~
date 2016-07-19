@@ -23,7 +23,8 @@ export class SearchComponent {
 
   ngOnInit() {//searchPosts
     this._postService.searchPosts(this._params.get('term')).subscribe(
-      (results) => {          
+      (results) => {
+          
          this._results = results;
       },
       (error) => console.error(error)

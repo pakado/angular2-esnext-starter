@@ -32,19 +32,8 @@ export class PostService {
 
   searchPosts(term) {
     let url =  '/search/' + term;
-    let postsResponse = this._http.get(url)
+    return this._http.get(url)
       .map(res => res.json());
-
-    postsResponse.subscribe(
-        (posts) => {
-          this.remotePosts.next(posts);
-        },
-        (error) => {
-          console.error(error);
-        }
-      );
-
-    return postsResponse;
   }
 
   addPost(post) {
