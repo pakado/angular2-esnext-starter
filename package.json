@@ -27,7 +27,6 @@
     "node": "4.4.2"
   },
   "dependencies": {
-    "@angular/material": "^2.0.0-alpha.10",
     "co-monk": "^1.0.0",
     "jsonwebtoken": "7.0.1",
     "koa": "1.2.4",
@@ -41,6 +40,7 @@
   },
   "devDependencies": {
     "angular2-bundle": "2.2.1",
+    "@angular/material": "^2.0.0-alpha.10",    
     "babel-core": "6.18.2",
     "babel-eslint": "7.1.1",
     "babel-loader": "6.2.8",
